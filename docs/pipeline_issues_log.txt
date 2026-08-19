@@ -1,0 +1,9 @@
+source1: 4 rows share a phone with another row in the SAME file (internal duplicates, e.g. 'R. Verma' vs 'Rohit Verma', and a Nikhil Chopra row using an 'alt.' email alias) -> collapsed during merge, not treated as new people.
+source1: loaded 42 rows, 0 unparsable phones
+source2: dropped 1 completely blank row(s).
+source2: dropped 1 row(s) with shifted/misaligned columns (e.g. an email string sitting in the worker_name column and skill tags sitting in the email_id column) — unrecoverable without guessing, so excluded rather than merged.
+source2: loaded 32 raw rows -> 30 usable after cleanup.
+source3: dropped 1 embedded duplicate-header row(s) found mid-file.
+source3: loaded 31 raw rows -> 30 usable after cleanup (no email field in this source).
+4 name(s) appear on MULTIPLE distinct phone/email identities (e.g. 'Arjun Mehta', 'Deepak Nair' each map to two different phone numbers) -> treated as two different real people sharing a common name, NOT merged, since name alone is not a reliable identity key here.
+FINAL: 102 raw rows across 3 sources collapsed into 60 unique people.
